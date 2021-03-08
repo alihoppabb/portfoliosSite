@@ -3,6 +3,7 @@
     <div id="pinMaster">
       <div id="pinContainer">
         <section class="panel one">
+          <FirstPanel>dfsgfds</FirstPanel>
           <h1>Pin Panel A</h1>
         </section>
         <section class="panel two">
@@ -21,31 +22,12 @@
           <h1>Pin Panel F</h1>
         </section>
       </div>
-
     </div>
-  </div>
-  <div>
-    <nav>
-      <ul>
-        <li>rot</li>
-        <li>git</li>
-        <li>ebal</li>
-      </ul>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </nav>
   </div>
 </template>
 
 <script>
+  import FirstPanel from "../components/firstPanel";
   import AOS from 'aos';
   import 'aos/dist/aos.css';
   import  { gsap } from "gsap"
@@ -59,13 +41,14 @@
   export default {
     name: 'Home',
     components: {
+      FirstPanel
     },
     mounted() {
       AOS.init();
       console.clear();
       let controller = new ScrollMagic.Controller();
       let sections = document.querySelectorAll("section");
-      let tl = new gsap.timeline
+      let tl = new gsap.timeline();
       for (let i = 1; i < sections.length; i++) {
         tl.from(sections[i], {duration: 1,  xPercent:100, ease: Linear.easeNone }, "+=1");
       }
