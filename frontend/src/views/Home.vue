@@ -3,8 +3,8 @@
     <div id="pinMaster">
       <div id="pinContainer">
         <section class="panel one">
-          <FirstPanel>dfsgfds</FirstPanel>
-          <h1>Pin Panel A</h1>
+          <navbar></navbar>
+         <FirstPanel>dfsgfds</FirstPanel>
         </section>
         <section class="panel two">
           <h1>Pin Panel B</h1>
@@ -27,21 +27,24 @@
 </template>
 
 <script>
+  import Navbar from "../components/navbar";
   import FirstPanel from "../components/firstPanel";
   import AOS from 'aos';
   import 'aos/dist/aos.css';
-  import  { gsap } from "gsap"
+  import { gsap } from "gsap"
   import { Linear } from 'gsap'
   import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
   import { TweenMax, TimelineMax } from "gsap"; // Also works with TweenLite and TimelineLite
   import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+
 
   ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
   export default {
     name: 'Home',
     components: {
-      FirstPanel
+      Navbar,
+       FirstPanel
     },
     mounted() {
       AOS.init();
@@ -49,8 +52,10 @@
       let controller = new ScrollMagic.Controller();
       let sections = document.querySelectorAll("section");
       let tl = new gsap.timeline();
-      for (let i = 1; i < sections.length; i++) {
-        tl.from(sections[i], {duration: 1,  xPercent:100, ease: Linear.easeNone }, "+=1");
+// let tl2 = new gsap.timeline();
+// tl2.from(sections[1],{duration: 1, xPercent:100, ease: Linear.easeNone }, "+=1" )
+      for (let i = 2; i < sections.length; i++) {
+        tl.from(sections[i], {duration: 2, xPercent:100, ease: Linear.easeNone }, "+=1");
       }
 
       new ScrollMagic.Scene({
@@ -104,6 +109,17 @@
     height: 100%;
     width: 100%;
     position: absolute;
+  }
+
+  .panel.two,
+  .panel.three,
+  .panel.four,
+  .panel.five,
+  .panel.six{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 7;
   }
 
   #pinMaster {
