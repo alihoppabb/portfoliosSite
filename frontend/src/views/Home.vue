@@ -15,12 +15,6 @@
         <section class="panel four">
           <h1>Pin Panel D</h1>
         </section>
-        <section class="panel five">
-          <h1>Pin Panel E</h1>
-        </section>
-        <section class="panel six">
-          <h1>Pin Panel F</h1>
-        </section>
       </div>
     </div>
   </div>
@@ -136,10 +130,10 @@
     background-color: #7275a3;
   }
   .three {
-    background-color: #e3aa59;
+    background-color: #0c0d2d;
   }
   .four {
-    background-color: #777;
+    background-color: #7287a3;
   }
 
   .five {

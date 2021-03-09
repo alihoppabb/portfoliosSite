@@ -41,11 +41,11 @@ name: "twoPanel",
 
 }
 .sl1{
-  margin-left: 25%;
+  margin-left: 20%;
   margin-top: 15%;
 }
 .sl2{
-  margin-left: 35%;
+  margin-left: 30%;
   margin-top: 15%;
 }
 #reveal1{
