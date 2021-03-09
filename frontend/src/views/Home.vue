@@ -7,7 +7,6 @@
          <FirstPanel>dfsgfds</FirstPanel>
         </section>
         <section class="panel two">
-          <h1>Pin Panel B</h1>
         </section>
         <section class="panel three">
           <h1>Pin Panel C</h1>
@@ -55,7 +54,7 @@
 // let tl2 = new gsap.timeline();
 // tl2.from(sections[1],{duration: 1, xPercent:100, ease: Linear.easeNone }, "+=1" )
       for (let i = 2; i < sections.length; i++) {
-        tl.from(sections[i], {duration: 2, xPercent:100, ease: Linear.easeNone }, "+=1");
+        tl.from(sections[i], {duration: 2, xPercent: 100, ease: Linear.easeNone}, "+=1");
       }
 
       new ScrollMagic.Scene({
@@ -127,10 +126,10 @@
   }
 
   .one {
-    background-color: #1bb1a5;
+    background-color: #24253d;
   }
   .two {
-    background-color: #94c356;
+    background-color: #7275a3;
   }
   .three {
     background-color: #e3aa59;
