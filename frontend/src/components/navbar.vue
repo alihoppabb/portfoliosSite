@@ -19,6 +19,7 @@ gsap.registerPlugin(TextPlugin);
         tl.to(text, 0.8, {text:{value:"Здесь наше < html >", padSpace:true,  ease:Linear.easeNone},delay:2});
         tl.to(text, 0.8, {text:{value:"Сайты под ключ", padSpace:true, ease:Linear.easeNone},delay:2});
         tl.to(text, 0.8, {text:{value:"Высокий уровень работы", padSpace:true, ease:Linear.easeNone},delay:2});
+        tl.to(text, 0.8, {text:{value:"Здесь наше название", padSpace:true, ease:Linear.easeNone},delay:2});
 
         let text2 = document.getElementById("two");
         let tl2 = new gsap.timeline({repeat:-1, yoyo:false, repeatDelay:0, onCompleteParams:["test1", "test2"]});

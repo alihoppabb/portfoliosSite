@@ -7,6 +7,7 @@
          <FirstPanel>dfsgfds</FirstPanel>
         </section>
         <section class="panel two">
+          <TwoPanel></TwoPanel>
         </section>
         <section class="panel three">
           <h1>Pin Panel C</h1>
@@ -28,6 +29,7 @@
 <script>
   import Navbar from "../components/navbar";
   import FirstPanel from "../components/firstPanel";
+  import TwoPanel from "@/components/twoPanel";
   import AOS from 'aos';
   import 'aos/dist/aos.css';
   import { gsap } from "gsap"
@@ -37,11 +39,13 @@
   import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 
 
+
   ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
   export default {
     name: 'Home',
     components: {
+      TwoPanel,
       Navbar,
        FirstPanel
     },

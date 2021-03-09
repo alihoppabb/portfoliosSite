@@ -59,6 +59,8 @@
 // tl.from(image[0], {opacity: 0})
             tl.to(image[1], {duration: 1, y: -155, x: -280})
             tl.to(image[0], {duration: 1, y: -165, x: -420})
+
+
         }
     }
 </script>
