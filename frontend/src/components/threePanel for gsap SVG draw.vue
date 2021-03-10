@@ -1,0 +1,64 @@
+<template>
+<div>
+  <div id ="pagepilling">
+    <div class="page">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" id="phone" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+
+        <g id="Слой_1" class="st0">
+</g>
+        <g id="Слой_2">
+	<path class="st1" d="M940.3,779H743.79c-25.79,0-46.7-20.91-46.7-46.7V284.7c0-25.79,20.91-46.7,46.7-46.7H940.3
+		c25.79,0,46.7,20.91,46.7,46.7V732.3C987,758.09,966.09,779,940.3,779z"/>
+          <rect x="712.02" y="294.84" class="st2" width="260.04" height="419.47"/>
+          <ellipse class="st1" cx="842.04" cy="746.66" rx="19.33" ry="21.56"/>
+          <rect x="816.57" y="257.6" class="st1" width="51.83" height="6.86"/>
+          <rect x="690.5" y="323.76" class="st3" width="5.27" height="30.38"/>
+          <rect x="690.5" y="365.9" class="st3" width="5.27" height="30.38"/>
+          <rect x="987.5" y="447.28" class="st3" width="4.78" height="78.22"/>
+          <path class="st4" d="M955.91,381.32H726.09c-5.57,0-10.09,4.52-10.09,10.09v60.5c0,5.57,4.52,10.09,10.09,10.09h229.82
+		c5.57,0,10.09-4.52,10.09-10.09v-60.5C966,385.84,961.48,381.32,955.91,381.32z"/>
+          <path class="st5" d="M953.76,375H729.24c-7.86,0-14.24-6.37-14.24-14.24v-46.53c0-7.86,6.37-14.24,14.24-14.24h224.53
+		c7.86,0,14.24,6.37,14.24,14.24v46.53C968,368.63,961.63,375,953.76,375z"/>
+          <path class="st5" d="M953.76,664H729.24c-7.86,0-14.24-6.37-14.24-14.24V482.24c0-7.86,6.37-14.24,14.24-14.24h224.53
+		c7.86,0,14.24,6.37,14.24,14.24v167.53C968,657.63,961.63,664,953.76,664z"/>
+</g>
+</svg>
+    </div>
+  </div>
+</div>
+</template>
+
+<script>
+import { gsap } from "gsap"
+import $ from 'jquery'
+import * as ScrollMagic from "scrollmagic";
+
+export default {
+  name: "threePanel",
+  mounted() {
+    let controller = new ScrollMagic.Controller({vertical: false,default: {duration: 1}});
+    $(document).ready(function() {
+    let phone = $("#phone").children("path");
+        let tl = new gsap.timeline();
+          tl.set(phone, {opacity: 1});
+          tl.from(phone, { duration: 0.75, x:-10100, delay:0.55});
+      new ScrollMagic.Scene({triggerElement: "#pagepilling", triggerHook: "0.4"})
+          .setTween(tl)
+          .addIndicators() // add indicators (requires plugin)
+          .addTo(controller);
+  });
+}
+}
+</script>
+
+<style scoped>
+
+
+.st0{display:none;}
+.st1{fill:none;stroke:#7275A3;stroke-width:5;stroke-miterlimit:10;}
+.st2{fill:#7275A3;stroke:#7275A3;stroke-width:12;stroke-miterlimit:10;}
+.st3{fill:#7275A3;stroke:#7275A3;stroke-width:5;stroke-miterlimit:10;}
+.st4{fill:#1D1F49;}
+.st5{fill:#E237FF;}
+</style>

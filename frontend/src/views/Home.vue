@@ -10,7 +10,7 @@
           <TwoPanel></TwoPanel>
         </section>
         <section class="panel three">
-          <h1>Pin Panel C</h1>
+          <ThreePanel></ThreePanel>
         </section>
         <section class="panel four">
           <h1>Pin Panel D</h1>
@@ -31,6 +31,7 @@
   import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
   import { TweenMax, TimelineMax } from "gsap"; // Also works with TweenLite and TimelineLite
   import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+  import ThreePanel from "@/components/threePanel";
 
 
 
@@ -39,6 +40,7 @@
   export default {
     name: 'Home',
     components: {
+      ThreePanel,
       TwoPanel,
       Navbar,
        FirstPanel
@@ -109,15 +111,14 @@
   }
 
   .panel.two,
-  .panel.three,
   .panel.four,
-  .panel.five,
-  .panel.six{
+  .panel.three{
     height: 100%;
     width: 100%;
     position: absolute;
     z-index: 7;
   }
+
 
   #pinMaster {
     position: relative;

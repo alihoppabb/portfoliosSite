@@ -15,6 +15,7 @@
     "scrollmagic": "^2.0.8",
     "scrollmagic-plugin-gsap": "^1.0.4",
     "vue": "^2.6.11",
+    "vue-kinesis": "^1.2.3",
     "vue-router": "^3.2.0",
     "vue-scroll-snap": "^0.1.10",
     "wow.js": "^1.2.2"
