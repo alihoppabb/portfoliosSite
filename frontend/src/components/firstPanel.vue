@@ -23,16 +23,15 @@
         top: 340px;
     }
     .image img:nth-child(2) {
-        width: 120px;
-        height: 200px;
+        width: 6%;
         position: absolute;
         right: 170px;
         top: 330px;
     }
 
     .image img:nth-child(3) {
-        width: 500px;
-        height: 500px;
+        min-width: 15%;
+        width: 25%;
         position: absolute;
         right: 100px;
         top: 180px;
@@ -54,13 +53,19 @@
 
 // create timeline
 // this could also be created in a loop
-            tl.from(image[2], {duration: 0.5, scale: 4, opacity: 0})
-// tl.from(image[1], {opacity: 0})
-// tl.from(image[0], {opacity: 0})
-            tl.to(image[1], {duration: 1, y: -155, x: -280})
+            tl.from(image[2], {duration: 0.5, rotation: 360})
+            tl.from(image[1], {duration: 0.01, opacity: 0})
+            tl.from(image[0], {duration: 0.01, opacity: 0})
+            tl.to(image[1], {duration: 1, yPercent: -75, xPercent: -230})
             tl.to(image[0], {duration: 1, y: -165, x: -420})
 
-
+          image[2].addEventListener('click', () => {
+            if (tl.reversed()) {
+              tl.play();
+            } else {
+              tl.reverse();
+            }
+          })
         }
     }
 </script>
