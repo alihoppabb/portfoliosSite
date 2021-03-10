@@ -76,6 +76,7 @@
   }
 </script>
 <style>
+
   body,
   html {
     height: 100%;
@@ -92,7 +93,6 @@
     font-size: 32px;
     color: white;
     position: relative;
-    display: block;
     top: 40%;
     text-align: center;
     text-transform: uppercase;
@@ -137,10 +137,4 @@
     background-color: #7287a3;
   }
 
-  .five {
-    background-color: #a63ba0;
-  }
-  .six {
-    background-color: #cf5b21;
-  }
 </style>

@@ -1,7 +1,13 @@
 <template>
-    <div class="box1">
-        <router-link class="tx" to="/"><a id="one" class="nav-link active" aria-current="page" href="#">Здесь наше название</a></router-link>
-        <router-link class="tx" to="/"><a id="two"  class="nav-link active" aria-current="page" href="#">Что</a></router-link>
+    <div class="header__title">
+        <div class="header__title-center">
+          <div class="header__link-first">
+            <router-link class="tx" to="/"><a id="one" class="nav-link active" aria-current="page" href="#">Здесь наше название</a></router-link>
+          </div>
+          <div class="header__link-second">
+            <router-link class="tx" to="/"><a id="two"  class="nav-link active" aria-current="page" href="#">Что</a></router-link>
+          </div>
+        </div>
     </div>
 </template>
 
@@ -33,20 +39,30 @@ gsap.registerPlugin(TextPlugin);
 </script>
 
 <style scoped>
-    .box1{
-
+    .header__title {
         margin-top: 35px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
         z-index: 2;
     }
+
+    .header__title-center {
+      min-width: 60%;
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .header__link-first {
+    }
+    .header__link-second {
+    }
+
     .tx{
         font-size: 35px;
         text-decoration: none;
-        margin-left: 150px;
-        margin-right: 150px;
     }
     .tx a{
         color: #ce33eb;
@@ -63,4 +79,11 @@ gsap.registerPlugin(TextPlugin);
 
 
     }
+
+    @media (max-width: 700px) {
+      .tx{
+        font-size: 25px;
+      }
+    }
+
 </style>

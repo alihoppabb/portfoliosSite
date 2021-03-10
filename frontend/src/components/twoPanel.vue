@@ -1,14 +1,14 @@
 <template>
-<div>
+<div class="panel__two">
   <div id="reveal1" class="slide">
     <div id="trigger" class="spacer s0"></div>
     <div class="sl1">
-      <img src="../assets/medium.png" alt="">
-      <h1>asdfds</h1>
+      <img src="../assets/medium.png" alt="" class="panel__img">
+      <h1 class="panel__text">asdfds</h1>
     </div>
     <div class="sl2">
-      <img src="../assets/medium.png" alt="">
-      <h1>ASDF</h1>
+      <img src="../assets/medium.png" alt="" class="panel__img">
+      <h1 class="panel__text">ASDF</h1>
     </div>
   </div>
 </div>
@@ -22,10 +22,16 @@ name: "twoPanel",
   mounted() {
     var controller = new ScrollMagic.Controller({vertical: false,default: {duration: 1}});
     let tl = new gsap.timeline();
-    tl.from(".sl1", {duration: 1, x: 1000})
-    tl.from(".sl2", {duration: 1, x: 1000})
+    let tl2 = new gsap.timeline()
+    tl.from(".sl1", {duration: 1, y: -1000})
+    tl2.from(".sl2", {duration: 1, y: 1000})
     new ScrollMagic.Scene({triggerElement: "#trigger", triggerHook: "0.4"})
         .setTween(tl)
+        .setClassToggle("#reveal1", "visible")
+        .addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
+    new ScrollMagic.Scene({triggerElement: "#trigger", triggerHook: "0.4"})
+        .setTween(tl2)
         .setClassToggle("#reveal1", "visible")
         .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
@@ -34,19 +40,31 @@ name: "twoPanel",
 </script>
 
 <style scoped>
+
+.panel__two {
+}
+
 .slide{
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-
+  justify-content: space-around;
+  margin-top: 10%;
 }
+
+#trigger {
+  display: none;
+}
+
 .sl1{
-  margin-left: 20%;
-  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .sl2{
-  margin-left: 30%;
-  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 #reveal1{
   opacity: 0;
@@ -54,8 +72,17 @@ name: "twoPanel",
 #reveal1.visible{
   opacity: 1;
 }
-img{
-  height: 250px;
-  width: 250px;
+.panel__img{
+  height: 40%;
+  width: 40%;
 }
+
+.panel__img:nth-child(1) {
+}
+
+.panel__text {
+  top: 0;
+  text-align: center;
+}
+
 </style>
