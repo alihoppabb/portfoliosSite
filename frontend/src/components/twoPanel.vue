@@ -1,7 +1,8 @@
 <template>
 <div class="panel__two">
+  <div id="trigger" class="spacer s0"></div>
   <div id="reveal1" class="slide">
-    <div id="trigger" class="spacer s0"></div>
+
     <div class="sl1">
       <img src="../assets/medium.png" alt="" class="panel__img">
       <h1 class="panel__text">asdfds</h1>
@@ -51,7 +52,7 @@ name: "twoPanel",
 }
 
 #trigger {
-  display: none;
+  overflow: hidden;
 }
 
 .sl1{
