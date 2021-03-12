@@ -9,12 +9,10 @@
         <section class="panel two">
           <TwoPanel></TwoPanel>
         </section>
-        <section class="panel three">
-        </section>
-        <section class="panel four">
-          <h1>Pin Panel D</h1>
-        </section>
       </div>
+    </div>
+    <div>
+      <firstvertical></firstvertical>
     </div>
   </div>
 </template>
@@ -23,6 +21,7 @@
   import Navbar from "../components/navbar";
   import FirstPanel from "../components/firstPanel";
   import TwoPanel from "@/components/twoPanel";
+  import Firstvertical from "@/components/firstVertical";
   import AOS from 'aos';
   import 'aos/dist/aos.css';
   import { gsap } from "gsap"
@@ -33,12 +32,12 @@
 
 
 
-
   ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
   export default {
     name: 'Home',
     components: {
+      Firstvertical,
       TwoPanel,
       Navbar,
        FirstPanel
@@ -52,13 +51,13 @@
 // let tl2 = new gsap.timeline();
 // tl2.from(sections[1],{duration: 1, xPercent:100, ease: Linear.easeNone }, "+=1" )
       for (let i = 2; i < sections.length; i++) {
-        tl.from(sections[i], {duration: 2, xPercent: 100, ease: Linear.easeNone}, "+=1");
+        tl.from(sections[i], {duration: 4, xPercent: 100, ease: Linear.easeNone}, "+=1");
       }
 
       new ScrollMagic.Scene({
         triggerElement: "#pinMaster",
         triggerHook: "onLeave",
-        duration: "500%"
+        duration: "50%"
       })
               .setPin("#pinMaster")
               .setTween(tl)
@@ -81,7 +80,6 @@
     font-size: 16px;
     font-weight: normal;
     font-family: "Roboto", sans-serif;
-    color: white;
     background-color: #f0f0ee;
     margin: 0px;
     padding: 0;
@@ -89,7 +87,6 @@
 
   h1 {
     font-size: 32px;
-    color: white;
     position: relative;
     top: 40%;
     text-align: center;
@@ -127,12 +124,6 @@
   }
   .two {
     background-color: #7275a3;
-  }
-  .three {
-    background-color: #0c0d2d;
-  }
-  .four {
-    background-color: #7287a3;
   }
 
 </style>
