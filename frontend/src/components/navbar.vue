@@ -40,10 +40,14 @@ gsap.registerPlugin(TextPlugin);
 
 <style scoped>
     .header__title {
-        margin-top: 35px;
         z-index: 2;
     }
-
+    .header__link-first{
+      margin-top: 2%;
+    }
+    .header__link-second{
+      margin-top: 2%;
+    }
     .header__title-center {
       min-width: 60%;
       width: 80%;
@@ -53,11 +57,6 @@ gsap.registerPlugin(TextPlugin);
       flex-wrap: wrap;
       justify-content: space-between;
       position: relative;
-    }
-
-    .header__link-first {
-    }
-    .header__link-second {
     }
 
     .tx{
@@ -76,8 +75,6 @@ gsap.registerPlugin(TextPlugin);
         transform: scale(1.3);
         transition: 0.5s;
         text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-
-
     }
 
     @media (max-width: 700px) {

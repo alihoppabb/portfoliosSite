@@ -1,129 +1,207 @@
 <template>
   <div class="home">
-    <div id="pinMaster">
-      <div id="pinContainer">
-        <section class="panel one">
-          <navbar></navbar>
-         <FirstPanel>dfsgfds</FirstPanel>
-        </section>
-        <section class="panel two">
-          <TwoPanel></TwoPanel>
-        </section>
+      <div class="firstblock">
+        <navbar></navbar>
+        <div class="purpleTextImage">
+          <div class="purple__text">
+            <PurpleEyeText class="PT" ></PurpleEyeText>
+          </div>
+          <div class="eyeimg">
+            <img class="PL" src="../assets/eyelogo1.svg" alt="">
+          </div>
+        </div>
       </div>
+    <div class="secondblock">
+      <TwoPanel class="twoelements"></TwoPanel>
     </div>
-    <div>
-      <firstvertical></firstvertical>
+    <div class="threeblock">
+      <div class="firstSite">
+        <div class="firstSite__text">
+            <h1>Site for Google</h1>
+            <p>Это одна из первых наших работ</p>
+        </div>
+        <div class="firstSite__image">
+          <ThreePanel class="image__one"></ThreePanel>
+        </div>
+      </div>
+      <div class="secondSite">
+
+        <div class="secondSite__image">
+          <ThreePanelTwo class="image__one"></ThreePanelTwo>
+
+        </div>
+        <div class="secondSite__text">
+          <h1>Site for Yandex</h1>
+          <p>Это уже наш второй проект</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
+
+<style>
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.firstSite{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+}
+.firstSite__text{
+  width:30%;
+  margin-left: 5%;
+  position: relative;
+  text-align: left;
+}
+.firstSite__text h1{
+  font-family: Impact;
+  width: 15%;
+}
+.firstSite__image{
+  width:70%;
+  position: relative;
+}
+.image__one{
+  position: relative;
+  left: -15%;
+  transform: scale(0.5);
+}
+.secondSite{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  margin-top: 30%;
+}
+.secondSite__text{
+  width:30%;
+  margin-left: 5%;
+  position: relative;
+  text-align: left;
+}
+.secondSite__image{
+  width:70%;
+  position: relative;
+}
+.secondSite__text h1{
+  font-family: Impact;
+  width: 15%;
+}
+.purpleTextImage{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 15%;
+  left: 0;
+  display: flex;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+}
+.purple__text{
+  display: block;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+.PT{
+  margin-left: 20%;
+  margin-top: 10%;
+  transform: scale(1.2);
+}
+.eyeimg{
+  display: block;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+.PL{
+  margin-left: 45%;
+  margin-top: 5%;
+  transform: scale(1.5);
+}
+.twoelements{
+  height: 100vh;
+}
+.firstblock {
+  background-color: #24253d;
+  position: relative;
+  background-position: center center;
+  height: 100vh;
+}
+.secondblock{
+  background-color: #7275a3;
+  position: relative;
+  background-position: center center;
+  height: 100vh;
+}
+.threeblock{
+  background-color: #7275a3;
+  position: relative;
+  background-position: center center;
+  height: 500vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media (max-width: 700px) {
+  .PT{
+    margin: auto;
+    transform: scale(0.8);
+  }
+  .PL{
+    margin: auto;
+    transform: scale(1);
+  }
+  .purpleTextImage{
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .purple__text{
+    display: block;
+    border: none;
+  }
+  .eyeimg{
+    display: block;
+    border: none;
+  }
+  .image__one{
+    transform: scale(0.2);
+  }
+}
+
+</style>
+
+
 <script>
   import Navbar from "../components/navbar";
-  import FirstPanel from "../components/firstPanel";
   import TwoPanel from "@/components/twoPanel";
-  import Firstvertical from "@/components/firstVertical";
-  import AOS from 'aos';
-  import 'aos/dist/aos.css';
-  import { gsap } from "gsap"
-  import { Linear } from 'gsap'
-  import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
-  import { TweenMax, TimelineMax } from "gsap"; // Also works with TweenLite and TimelineLite
-  import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
-
-
-
-  ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+  import PurpleEyeText from "@/components/purpleEyeText";
+  import ThreePanel from "@/components/threePanel";
+  import ThreePanelTwo from "@/components/threePanelTwo";
 
   export default {
     name: 'Home',
     components: {
-      Firstvertical,
+      ThreePanel,
+      PurpleEyeText,
       TwoPanel,
       Navbar,
-       FirstPanel
+      ThreePanelTwo
     },
     mounted() {
-      AOS.init();
-      console.clear();
-      let controller = new ScrollMagic.Controller();
-      let sections = document.querySelectorAll("section");
-      let tl = new gsap.timeline();
-// let tl2 = new gsap.timeline();
-// tl2.from(sections[1],{duration: 1, xPercent:100, ease: Linear.easeNone }, "+=1" )
-      for (let i = 2; i < sections.length; i++) {
-        tl.from(sections[i], {duration: 4, xPercent: 100, ease: Linear.easeNone}, "+=1");
-      }
-
-      new ScrollMagic.Scene({
-        triggerElement: "#pinMaster",
-        triggerHook: "onLeave",
-        duration: "50%"
-      })
-              .setPin("#pinMaster")
-              .setTween(tl)
-              .addIndicators({
-                colorTrigger: "white",
-                colorStart: "white",
-                colorEnd: "white",
-                indent: 40
-              })
-              .addTo(controller);
 
     }
   }
 </script>
-<style>
-
-  body,
-  html {
-    height: 100%;
-    font-size: 16px;
-    font-weight: normal;
-    font-family: "Roboto", sans-serif;
-    background-color: #f0f0ee;
-    margin: 0px;
-    padding: 0;
-  }
-
-  h1 {
-    font-size: 32px;
-    position: relative;
-    top: 40%;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  #pinContainer {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-  }
-  .panel {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-  }
-
-  .panel.two,
-  .panel.four,
-  .panel.three{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 7;
-  }
-
-
-  #pinMaster {
-    position: relative;
-  }
-
-  .one {
-    background-color: #24253d;
-  }
-  .two {
-    background-color: #7275a3;
-  }
-
-</style>

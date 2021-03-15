@@ -1,9 +1,9 @@
 <template>
+  <div>
     <div class="firsPanel">
         <div class="sections" id="js-slideContainer">
             <section class="section">
                 <div class="sectionTitle" id="title1">
-                  <PurpleEyeText></PurpleEyeText>
                     <div class="image">
                         <img src="../assets/small.png" alt="">
                         <img src="../assets/medium.png" alt="">
@@ -13,6 +13,7 @@
             </section>
         </div>
     </div>
+  </div>
 </template>
 
 <style scoped>
@@ -45,10 +46,9 @@
     import { gsap } from "gsap"
     import { Linear } from 'gsap'
     import { TweenLite } from 'gsap'
-    import PurpleEyeText from "@/components/purpleEyeText";
     export default {
         name: "firstPanel",
-      components: {PurpleEyeText},
+      components: {},
       mounted() {
             TweenLite.defaultEase = Linear.easeNone;
             let image = document.querySelectorAll(".image img");

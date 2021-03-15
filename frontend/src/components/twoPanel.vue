@@ -1,8 +1,6 @@
 <template>
 <div class="panel__two">
-  <div id="trigger" class="spacer s0"></div>
   <div id="reveal1" class="slide">
-
     <div class="sl1">
       <img src="../assets/medium.png" alt="" class="panel__img">
       <h1 class="panel__text">asdfds</h1>
@@ -16,22 +14,26 @@
 </template>
 
 <script>
-import { gsap } from "gsap"
 import * as ScrollMagic from "scrollmagic";
+import { gsap } from "gsap"
+import { TweenMax, TimelineMax } from "gsap"; // Also works with TweenLite and TimelineLite
+import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+
+ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 export default {
 name: "twoPanel",
   mounted() {
-    var controller = new ScrollMagic.Controller({vertical: false,default: {duration: 1}});
+    var controller = new ScrollMagic.Controller();
     let tl = new gsap.timeline();
     let tl2 = new gsap.timeline()
-    tl.from(".sl1", {duration: 1, y: -1000})
-    tl2.from(".sl2", {duration: 1, y: 1000})
-    new ScrollMagic.Scene({triggerElement: "#trigger", triggerHook: "0.4"})
+    tl.from(".sl1", {duration: 1, x: -1000})
+    tl2.from(".sl2", {duration: 1, x: 1000})
+    new ScrollMagic.Scene({triggerElement: ".slide", triggerHook: "0.5"})
         .setTween(tl)
         .setClassToggle("#reveal1", "visible")
         .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
-    new ScrollMagic.Scene({triggerElement: "#trigger", triggerHook: "0.4"})
+    new ScrollMagic.Scene({triggerElement: ".slide", triggerHook: "0.5"})
         .setTween(tl2)
         .setClassToggle("#reveal1", "visible")
         .addIndicators() // add indicators (requires plugin)
@@ -40,19 +42,17 @@ name: "twoPanel",
 }
 </script>
 
-<style scoped>
+<style>
 
 .panel__two {
+
 }
 
 .slide{
   display: flex;
   justify-content: space-around;
-  margin-top: 10%;
-}
+  align-items: center;
 
-#trigger {
-  overflow: hidden;
 }
 
 .sl1{
@@ -60,12 +60,14 @@ name: "twoPanel",
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 15%;
 }
 .sl2{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top:15%;
 }
 #reveal1{
   opacity: 0;
