@@ -8,7 +8,7 @@
             <PurpleEyeText class="PT" ></PurpleEyeText>
           </div>
           <div class="eyeimg">
-            <img class="PL" src="../assets/eyelogo1.svg" alt="">
+            <img class="PL" src="../assets/eyelogo2.svg" alt="">
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
 
     </div>
     <div class="fourBlock">
-
+      <PeopleOne></PeopleOne>
     </div>
   </div>
 </template>
@@ -146,7 +146,6 @@
   width: 100%;
   height: 100%;
   position: fixed;
-  top: 15%;
   left: 0;
   display: flex;
   overflow: auto;
@@ -161,7 +160,7 @@
 }
 .PT{
   margin-left: 20%;
-  margin-top: 10%;
+  margin-top: 15%;
   transform: scale(1.2);
 }
 .eyeimg{
@@ -171,8 +170,8 @@
   height: 100%;
 }
 .PL{
-  margin-left: 45%;
-  margin-top: 5%;
+  margin-left: 25%;
+  margin-top: 9%;
   transform: scale(1.5);
 }
 .twoelements{
@@ -210,12 +209,12 @@
   }
   .PT{
     margin-top: -25%;
-    transform: scale(1);
+    transform: scale(1.1);
     margin-left: 5%;
   }
   .PL{
-    margin-top: -12%;
-    transform: scale(2);
+    margin-top: 15%;
+    transform: scale(1.5);
   }
   .purpleTextImage{
     flex-direction: column-reverse;
@@ -233,6 +232,7 @@
   .image__one{
     transform: scale(0.2);
   }
+
 }
 
 </style>
@@ -245,10 +245,12 @@
   import ThreePanel from "@/components/threePanel";
   import ThreePanelTwo from "@/components/threePanelTwo";
   import ThreePanelThree from "@/components/threePanelThree";
+  import PeopleOne from "@/components/peopleOne";
 
   export default {
     name: 'Home',
     components: {
+      PeopleOne,
       ThreePanel,
       PurpleEyeText,
       TwoPanel,
