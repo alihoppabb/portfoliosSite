@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+
       <div class="firstblock">
         <navbar></navbar>
         <div class="purpleTextImage">
@@ -11,10 +12,13 @@
           </div>
         </div>
       </div>
+
     <div class="secondblock">
       <TwoPanel class="twoelements"></TwoPanel>
     </div>
     <div class="threeblock">
+
+
       <div class="firstSite">
         <div class="firstSite__text">
             <h1>Site for Google</h1>
@@ -24,17 +28,33 @@
           <ThreePanel class="image__one"></ThreePanel>
         </div>
       </div>
-      <div class="secondSite">
 
+
+      <div class="secondSite">
         <div class="secondSite__image">
           <ThreePanelTwo class="image__one"></ThreePanelTwo>
-
         </div>
         <div class="secondSite__text">
           <h1>Site for Yandex</h1>
           <p>Это уже наш второй проект</p>
         </div>
       </div>
+
+
+      <div class="thirdSite">
+        <div class="thirdSite__image">
+          <ThreePanelThree class="image__one"></ThreePanelThree>
+        </div>
+        <div class="thirdSite__text">
+          <h1>Site for Yandex</h1>
+          <p>Это уже наш второй проект</p>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="fourBlock">
+
     </div>
   </div>
 </template>
@@ -56,7 +76,7 @@
 }
 .firstSite__text{
   width:30%;
-  margin-left: 5%;
+  margin-left: 12%;
   position: relative;
   text-align: left;
 }
@@ -94,6 +114,31 @@
   position: relative;
 }
 .secondSite__text h1{
+  font-family: Impact;
+  width: 15%;
+}
+
+.thirdSite{
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  margin-top: 60%;
+}
+.thirdSite__text{
+  width:30%;
+  margin-left: 12%;
+  position: relative;
+  text-align: left;
+}
+.thirdSite__image{
+  width:70%;
+  position: relative;
+}
+.thirdSite__text h1{
   font-family: Impact;
   width: 15%;
 }
@@ -149,19 +194,28 @@
   background-color: #7275a3;
   position: relative;
   background-position: center center;
-  height: 500vh;
+  height: 200vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
+.fourBlock{
+  position: relative;
+  height: 100vh;
+  background-color: #24253d;
+}
 @media (max-width: 700px) {
+  .secondblock{
+    height: 110vh;
+  }
   .PT{
-    margin: auto;
-    transform: scale(0.8);
+    margin-top: -25%;
+    transform: scale(1);
+    margin-left: 5%;
   }
   .PL{
-    margin: auto;
-    transform: scale(1);
+    margin-top: -12%;
+    transform: scale(2);
   }
   .purpleTextImage{
     flex-direction: column-reverse;
@@ -190,6 +244,7 @@
   import PurpleEyeText from "@/components/purpleEyeText";
   import ThreePanel from "@/components/threePanel";
   import ThreePanelTwo from "@/components/threePanelTwo";
+  import ThreePanelThree from "@/components/threePanelThree";
 
   export default {
     name: 'Home',
@@ -198,7 +253,8 @@
       PurpleEyeText,
       TwoPanel,
       Navbar,
-      ThreePanelTwo
+      ThreePanelTwo,
+      ThreePanelThree
     },
     mounted() {
 

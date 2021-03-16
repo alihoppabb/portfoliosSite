@@ -31,12 +31,10 @@ name: "twoPanel",
     new ScrollMagic.Scene({triggerElement: ".slide", triggerHook: "0.5"})
         .setTween(tl)
         .setClassToggle("#reveal1", "visible")
-        .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
     new ScrollMagic.Scene({triggerElement: ".slide", triggerHook: "0.5"})
         .setTween(tl2)
         .setClassToggle("#reveal1", "visible")
-        .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
   }
 }
@@ -52,6 +50,16 @@ name: "twoPanel",
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+}
+@media (max-width: 700px) {
+  .slide{
+    flex-direction: column;
+  }
+  .panel__img{
+    height: 20%;
+    width: 20%;
+  }
 
 }
 

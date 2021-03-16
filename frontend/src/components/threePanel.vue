@@ -1,22 +1,26 @@
 <template>
-  <div>
-    <kinesis-container event="move">
-      <kinesis-element
-          tag="svg"
-          :transformOrigin="center"
-          :strength="20"
-          type="depth">
-        <img src="../assets/phone.svg" width="500px" height="500px" alt="">
-      </kinesis-element>
-    </kinesis-container>
-  </div>
+<div>
+  <kinesis-container event="scroll">
+    <kinesis-element
+        :strength="25"
+        transformOrigin="0.5"
+        :maxX ="0.5"
+        axis = "x"
+        type="depth">
+      <img src="../assets/site.png" alt="">
+    </kinesis-element>
+  </kinesis-container>
+</div>
 </template>
 
 <script>
 import { KinesisContainer, KinesisElement} from "vue-kinesis"
 export default {
   name: "threePanel",
-  components: { KinesisContainer, KinesisElement }
+  components:{KinesisContainer, KinesisElement},
+  mounted() {
+
+  }
 }
 </script>
 
