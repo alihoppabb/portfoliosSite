@@ -15,6 +15,7 @@
 
 <script>
 import { KinesisContainer, KinesisElement} from "vue-kinesis"
+
 export default {
   name: "threePanel",
   components:{KinesisContainer, KinesisElement},

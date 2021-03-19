@@ -38,19 +38,19 @@ export default {
 
     let controller = new ScrollMagic.Controller();
     let tl = new gsap.timeline();
-    tl.from(".letterTwo", {duration: 1, rotationY: 36, delay: 2, opacity: 0, yPercent:-300, stagger: 0.1, ease:"Expo.easeOut"})
+    tl.from(".letterTwo", {duration: 1, rotationY: 36, opacity: 0, yPercent:-300, stagger: 0.1, ease:"Expo.easeOut"})
     new ScrollMagic.Scene({triggerElement: ".people__imagetextTwo", triggerHook: "0.5"})
         .setTween(tl)
         .addTo(controller);
 
     let tl1 = new gsap.timeline();
-    tl1.from(".people__imageTwo",{opacity:0, delay: 2, duration:1.5, x: -100})
+    tl1.from(".people__imageTwo",{opacity:0, delay: 0.2, duration:1.5, x: -100})
     new ScrollMagic.Scene({triggerElement: ".people__imagetextTwo", triggerHook: "0.5"})
         .setTween(tl1)
         .addTo(controller);
 
     let tl2 = new gsap.timeline();
-    tl2.from("#fraseTwo",{opacity:0, duration:1, delay: 2.7,y: -100, x: 50})
+    tl2.from("#fraseTwo",{opacity:0, duration:1, delay: .9,y: -100, x: 50})
     new ScrollMagic.Scene({triggerElement: ".people__imagetextTwo", triggerHook: "0.5"})
         .setTween(tl2)
         .addTo(controller);
@@ -69,7 +69,7 @@ export default {
 }
 .letterTwo{
   font-family: Impact;
-  color: #7275a3;
+  color: #bec2ea;
   font-size: 95px;
 }
 .people__imagetextTwo{
@@ -83,9 +83,8 @@ export default {
   justify-content: center;
 }
 
-
 .people__textPTwo{
-  color: #7275a3;
+  color: #bec2ea;
   font-size: 25px;
   text-align: left;
   margin-left: 30%;

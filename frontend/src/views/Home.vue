@@ -16,53 +16,53 @@
     <div class="secondblock">
       <TwoPanel class="twoelements"></TwoPanel>
     </div>
-    <div class="threeblock">
+      <div class="threeblock">
 
 
-      <div class="firstSite">
-        <div class="firstSite__text">
+        <div class="firstSite">
+          <div class="firstSite__text">
             <h1>Site for Google</h1>
             <p>Это одна из первых наших работ</p>
+          </div>
+          <div class="firstSite__image">
+            <ThreePanel class="image__one"></ThreePanel>
+          </div>
         </div>
-        <div class="firstSite__image">
-          <ThreePanel class="image__one"></ThreePanel>
+
+
+        <div class="secondSite">
+          <div class="secondSite__image">
+            <ThreePanelTwo class="image__one"></ThreePanelTwo>
+          </div>
+          <div class="secondSite__text">
+            <h1>Site for Yandex</h1>
+            <p>Это уже наш второй проект</p>
+          </div>
+        </div>
+
+
+        <div class="thirdSite">
+          <div class="thirdSite__image">
+            <ThreePanelThree class="image__one"></ThreePanelThree>
+          </div>
+          <div class="thirdSite__text">
+            <h1>Site for Yandex</h1>
+            <p>Это уже наш второй проект</p>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="fourBlock">
+        <div class="onetwoPeople">
+          <div class="people__one">
+            <PeopleOne></PeopleOne>
+          </div>
+          <div class="people__two">
+            <PeopleTwo></PeopleTwo>
+          </div>
         </div>
       </div>
-
-
-      <div class="secondSite">
-        <div class="secondSite__image">
-          <ThreePanelTwo class="image__one"></ThreePanelTwo>
-        </div>
-        <div class="secondSite__text">
-          <h1>Site for Yandex</h1>
-          <p>Это уже наш второй проект</p>
-        </div>
-      </div>
-
-
-      <div class="thirdSite">
-        <div class="thirdSite__image">
-          <ThreePanelThree class="image__one"></ThreePanelThree>
-        </div>
-        <div class="thirdSite__text">
-          <h1>Site for Yandex</h1>
-          <p>Это уже наш второй проект</p>
-        </div>
-      </div>
-
-
-    </div>
-    <div class="fourBlock">
-      <div class="onetwoPeople">
-        <div class="people__one">
-          <PeopleOne></PeopleOne>
-        </div>
-        <div class="people__two">
-          <PeopleTwo></PeopleTwo>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -71,6 +71,11 @@
   width: 0;
 }
 
+.slider{
+  position: relative;
+  z-index: 100;
+  top: 50%;
+}
 .firstSite{
   display: flex;
   flex-direction: row;
@@ -157,6 +162,7 @@
   overflow: auto;
   justify-content: center;
   align-items: center;
+
 }
 .purple__text{
   display: block;
@@ -286,9 +292,11 @@
   import ThreePanelThree from "@/components/threePanelThree";
   import PeopleOne from "@/components/peopleOne";
   import PeopleTwo from "@/components/peopleTwo";
+
   export default {
     name: 'Home',
     components: {
+
       PeopleOne,
       ThreePanel,
       PurpleEyeText,

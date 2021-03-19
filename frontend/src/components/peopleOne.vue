@@ -66,7 +66,7 @@ export default {
 }
 .letter{
   font-family: Impact;
-  color: #7275a3;
+  color: #bec2ea;
   font-size: 95px;
 }
 .people__imagetext{
@@ -80,7 +80,7 @@ export default {
   justify-content: center;
 }
 .people__textP{
-  color: #7275a3;
+  color: #bec2ea;
   font-size: 25px;
   text-align: left;
   margin-left: 30%;
